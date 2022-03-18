@@ -35,6 +35,19 @@
      bottom: 80px;   
  }
  
+.hero img{
+    position: relative;
+    margin-top: 120px;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.take{
+    z-index: 1;
+    position: absolute;
+    bottom: 80px;   
+}
  
 
 
