@@ -2,50 +2,494 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} 
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* || VARIABILI || */
+:root {
+    --buyBtn_color: #CD3D0F;
+    --infoBtn_color: #2D64E6;
+    --psPlus-bgColor: #BEBCBB;
+    --psNow-bgColor: #161C3B;
+    --footer-bgColor: #00439C;
+}
+a {
+    text-decoration: none;
+}
+[class*=Container]{
+    width: 95%;
+    margin: 0 auto;
+}
+.hidden {
+    display: none;
+}
 
-.cs-bg-black{
+/* #region || HEADER ||*/
+header {
+    display: unset
+}
+/* #region || HEADER-TOP ||*/
+.headerTop {
     background-color: black;
-}
-.cs-bg-blue{
-    background-color: blue;
-}
-
-
-.debug{
-    border: 1px solid black;
-}
-
-
-/* main */
-
-
-#jumbotron img{
-    position: relative;
-    margin-top: 120px;
-    height: 100%;
     width: 100%;
-    display: block; 
-    
+    height: 36px;
+    text-align: right;
 }
- .return{
-     z-index: 1;
-     position: absolute;
-     bottom: 80px;   
- }
- 
-#game img{
-    margin-top: 120px;
-    width: 100%;
-    height: 100%
+.headerTop img {
+    height: 36px;
+    width: 50px;
+    margin-right: 10px;
+}
+/* #endregion HEADER-TOP*/
+
+/* #region || HEADER-BOTTOM ||*/
+.headerBottom {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+}
+.headerBottom .nav-link img {
+    width: 13px;
+}
+.headerBottom .nav-link.show img {
+    transform: rotate(0.5turn);
+    transition: 0.5s;
+}
+.list-inline-item a img {
+    width: 60px;
+}
+.header-bottom .list-style a{
+    color: black;
+    text-decoration: none;
+}
+.listText {
     display: block;
 }
-
-.itake{
-    z-index: 1;
-    top: 20px;
-
+.dropdownCard{
+    width: 10%;
+    min-width: 80px;
 }
+.list-inline-item a{
+    color: black;
+}
+.list-inline-item a .fa-circle {
+    color: #0070D1;
+    font-size: 5px;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+.headerBottom .rightNav>a img {
+    width: 25px;
+}
+.rightNav button {
+    margin: 0 15px 0 5px;
+}
+/* EFFECTS */
+.dropdownCard:hover{
+    box-shadow: 1px 1px 5px #adadad;
+    border-radius: 10px;
+}
+.rightNav button:hover {
+    background-color: #504f4f;
+    border-color: #504f4f;
+}
+/* #endregion HEADER-BOTTOM */
+/* #endregion HEADER */
+
+/* #region || MAIN ||*/
+section {
+    padding: 18% 0;
+}
+/* #region || JUMBOTRON ||*/
+section.jumbotron {
+    padding: 0 0 8% 0;
+}
+.jumboBg {
+    background-image: url("../img/jumbo-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    height: 580px;
+    width: 100%;
+    position: relative;
+}
+.jumboText {
+    width: 95%;
+    position: absolute;
+    bottom: 3rem;
+    left: 2.5%;
+}
+.jumboText img {
+    width: 60%;
+}
+.jumboText h2 {
+    padding: 5% 0;
+    font-size: 2.5rem;
+}
+.jumboText h5 {
+    padding-bottom: 5%;
+    font-size: 1rem;
+}
+.jumboText button {
+    background-color: var(--buyBtn_color);
+    font-size: 1.2rem;
+    outline-offset: 2px;
+    outline: 2px solid transparent;
+}
+.jumboContainer .row img {
+    width: 100%;
+    border-radius: 20px;
+}
+.jumboCards {
+    padding-top: 3%;
+}
+.jumboCards img {
+    border: 2px solid transparent;
+    padding: 2px;
+}
+
+/* || EFFECTS || */
+.jumboCards img:hover {
+    border: 2px solid rgb(3, 87, 196);
+    transform: translateY(-5px);
+    transition: 0.5s;
+    box-shadow: 0px 10px 13px -3px #999898;
+}
+.jumboText button:hover {
+    outline-color: #bb2d3b;
+}
+/* #endregion JUMBOTRON */
+
+/* #region || OLD+NEW CONSOLE SECTION || */
+.consoleTitle {
+    padding-bottom: 15%;
+}
+.consoleContainer span {
+    color: #0474CE;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+.consoleContainer h2 {
+    font-size: 2.5rem;
+    padding-bottom: 2%;
+}
+.consoleContainer h5 {
+    color: #727272;
+    margin-bottom: 0;
+}
+.consoleContainer button {
+    margin-top: 5%;
+    outline-offset: 2px;
+    outline: 2px solid transparent;
+}
+.consoleContainer img {
+    width: 100%;
+}
+.consoleCard {
+    filter: opacity(0.6);
+    border-bottom: 2px solid transparent;
+}
+.consoleContainer .cardImg_container {
+    height: 150px;
+    padding-bottom: 10%;
+}
+.consoleContainer .cardImg_container img {
+    height: 100%;
+    object-fit: contain;
+}
+.consoleContainer h6 {
+    display: none;
+}
+.consoleContainer a {
+    color: black;
+}
+.consoleTitle .regSymbol {
+    color: black;
+    font-size: 1.2rem;
+    vertical-align: super;
+}
+/* EFFECTS */
+.consoleContainer button:hover {
+    outline-color: #0d6efd;
+}
+.consoleCard:hover {
+    filter: opacity(1);
+    transition: 0.2s;
+    border-bottom: 2px solid #00439C;
+}
+/* #endregion CONSOLE SECTION*/
+
+/* #region || GAME SECTION ||*/
+.gameBg {
+    background-image: url("../img/it-takes-two-hero-banner-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    height: 630px;
+    width: 100%;
+    position: relative;
+}
+section.game {
+    background-color: #1F1F1F;
+    padding-top: 0%;
+}
+.gameContainer {
+    padding-top: 3%;
+}
+.gameText {
+    width: 95%;
+    position: absolute;
+    bottom: 3rem;
+    left: 2.5%;
+}
+.gameText img {
+    width: 60%;
+}
+.gameText h2 {
+    padding: 5% 0;
+    font-size: 2.5rem;
+}
+.gameText h5 {
+    padding-bottom: 5%;
+    font-size: 1rem;
+}
+.gameText button {
+    background-color: var(--buyBtn_color);
+    outline-offset: 2px;
+    outline: 2px solid transparent;
+}
+.gameContainer .row img {
+    width: 100%;
+    border-radius: 20px;
+}
+.gameContainer h2 {
+    font-size: 2.3rem;
+    padding: 3% 0;
+}
+.gameContainer h5 {
+    font-size: 1.7rem;
+    padding-bottom: 3%;
+}
+.gameContainer h6 {
+    padding-top: 5%;
+    font-size: 1.1rem;
+}
+.gameContainer a {
+    color: white;
+}
+/* EFFECTS */
+.gameText button:hover {
+    outline-color: #bb2d3b;
+}
+/* #endregion GAME SECTION */
+
+/* #region || PSPLUS / PSNOW SECTION ||*/
+section.psPlus {
+    background-color: var(--psPlus-bgColor);
+}
+section.psNow {
+    background-color: var(--psNow-bgColor);
+}
+section.psPlus, section.psNow {
+    padding: 10% 0;
+}
+.plusContainer .row div:first-child img, .nowContainer .row div:first-child img{
+    width: 60%;
+}
+.plusContainer .row div:last-child img, .nowContainer .row div:last-child img{
+    height: 100%;
+    max-width: 100%;
+}
+.plusContainer p, .nowContainer p {
+    padding: 5% 0;
+    margin: 0%;
+}
+.nowContainer button, .plusContainer button {
+    outline-offset: 2px;
+    outline: 2px solid transparent;
+}
+/* EFFECTS */
+.nowContainer button:hover, .plusContainer button:hover {
+    outline-color: white;
+}
+/* #endregion PS PLUS / PS NOW */
+
+/* #region || SCONTI SECTION ||*/
+.scontiContainer img {
+    width: 100%;
+    cursor: pointer;
+}
+.scontiContainer h2 {
+    font-size: 3rem;
+}
+.scontiContainer h4 {
+    color: #727272;
+    padding: 5% 0 8% 0;
+}
+/* EFFETTI */
+.scontiContainer img:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+/* #endregion SCONTI SECTION */
+
+/* #region || SOCIAL SECTION ||*/
+.socialContainer img {
+    width: 100%;
+    cursor: pointer;
+}
+.socialContainer h2 {
+    padding-bottom: 14%;
+    font-size: 2rem;
+}
+.socialContainer img:hover {
+    box-shadow: -1px 3px 8px 5px #9b9a9a;
+    transform: scale(1.05);
+    transition: 00.5s;
+}
+/* #endregion SOCIAL SECTION */
+/* #endregion MAIN */
+
+/* #region || FOOTER ||*/
+footer {
+    background-color: var(--footer-bgColor);
+    padding: 15% 0;
+}
+.footerLanguage img{
+    width: 5%;
+    margin-right: 2%;
+}
+.footerLanguage {
+    padding: 8% 0;
+}
+footer ul {
+    list-style: none;
+}
+footer li a {
+    color: white;
+}
+footer .col-12>img {
+    width: 22%;
+}
+.rights {
+    padding-top: 8%;
+}
+.rights img {
+    width: 30%;
+    padding-bottom: 3%;
+}
+.rights a {
+    display: inline-block;
+    color: white;
+    text-decoration: underline;
+}
+/* EFFECTS  */
+footer li a:hover {
+    color: white;
+}
+/* #endregion FOOTER*/
+
+/* #region || MEDIA QUERIES ||*/
+/* SMALL */
+@media screen and (min-width: 576px) {
+    .jumboText, .gameText {
+       left: 2.5%;
+       width: 90%;
+    }
+    .jumboText h2, .gameText h2 {
+        font-size: 2.5rem;
+    }
+    .jumboText h5, .gameText h5 {
+        font-size: 1.1rem;
+    }
+    .jumboText button, .gameText button {
+        font-size: 1.2rem;
+    }
+    section.psPlus, section.psNow {
+        padding: 8% 0;
+    }
+    .scontiContainer h2 {
+        font-size: 2.5rem;
+    }
+    [class*=Container]{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .socialContainer img {
+        width: 130px;
+    }
+}
+/* MEDIUM */
+@media screen and (min-width: 768px) {
+    section { 
+        padding: 12% 0;
+    }
+    .consoleContainer h6 {
+        display: inline-block;
+    }
+    .consoleContainer button {
+        margin-top: 5%;
+    }
+    .gameText img {
+        width: 50%;
+    }
+    .consoleContainer button {
+        margin-top: 10%;
+    }
+    section.psPlus, section.psNow {
+        padding: 0;
+    }
+    .plusContainer .hidden, .nowContainer .hidden {
+        display: inline-block;
+    }
+    .plusContainer p, .nowContainer p {
+        padding: 8% 0;
+    }
+    .scontiContainer h2 {
+        font-size: 2.5rem;
+    }
+}
+/* LARGE */
+@media screen and (min-width: 992px) {
+    section {
+        padding: 6% 0;
+    }
+    .jumboText, .gameText {
+        width: 30%;
+    }
+    .consoleContainer button {
+        margin-top: 8%;
+        font-size: 1.2rem;
+    }
+    .gameText img {
+        width: 70%;
+    }
+    .gameText h2 {
+        padding: 10% 0;
+    }
+    .consoleTitle {
+        padding-bottom: 5%;
+    }
+    section.game, section.jumbotron {
+        padding-top: 0;
+    }
+    .scontiContainer h4 {
+        padding: 3% 0 7% 0;
+    }
+    .socialContainer h2 {
+        padding-bottom: 5%;
+    }
+    footer  {
+        padding-top: 7%;
+    }
+    .footerContainer li {
+        margin-top: 8%;
+    }
+    .rights {
+        width: 50%;
+    }
+}
+/* #endregion MEDIA QUERIES */
 
  
 
